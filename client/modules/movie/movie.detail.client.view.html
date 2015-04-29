@@ -1,0 +1,9 @@
+<section data-ng-controller="MovieCtrl as vm" data-ng-init="vm.loadMovie()">
+	<h2 data-ng-bind="vm.movie.properties.title"></h2>
+	<article data-ng-bind="vm.movie.properties.description"></article>
+</section>
+<ul>
+	<li><a data-ui-sref="movieList">Back To List</a></li>
+	<li><a data-ui-sref="movieAdd">Add New</a></li>
+	<li><a data-ui-sref="home">Home</a></li>
+</ul>

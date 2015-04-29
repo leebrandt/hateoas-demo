@@ -1,0 +1,18 @@
+<section data-ng-controller="MovieCtrl as vm">
+		<div><input type="text" id="title" placeholder="title" data-ng-model="vm.movie.title" /></div>
+		<div><input type="number" id="releaseYear" placeholder="release year" data-ng-model="vm.movie.releaseYear" /></div>
+		<div><input type="number" id="runTimeInMinutes" placeholder="run time in minutes" data-ng-model="vm.movie.runTimeInMinutes" /></div>
+		<div><select id="rating" data-ng-model="vm.movie.rating">
+			<option value="">MPAA Rating</option>
+			<option value="G">G</option>
+			<option value="PG">PG</option>
+			<option value="PG-13">PG-13</option>
+			<option value="NC-17">NC-17</option>
+			<option value="R">R</option>
+			<option value="X">X</option>
+			<option value="XXX">XXX</option>
+		</select></div>
+		<div><input type="text" id="description" placeholder="description" data-ng-model="vm.movie.description" /></div>
+		<div><input type="text" id="director" placeholder="director" data-ng-model="vm.movie.director" /></div>
+		<div><button data-ng-click="vm.addMovie()">Add Movie</button></div>
+</section>

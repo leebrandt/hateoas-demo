@@ -1,0 +1,14 @@
+{
+  "name": "hateoas-demo",
+  "version": "1.0.0",
+  "authors": [
+    "Lee Brandt <leebrandt@gmail.com>"
+  ],
+  "description": "Demo app for HyperResource",
+  "license": "LGPL-3.0",
+  "dependencies": {
+    "angular-ui-router": "~0.2.14",
+    "jquery": "~2.1.3",
+    "lodash": "~3.7.0"
+  }
+}

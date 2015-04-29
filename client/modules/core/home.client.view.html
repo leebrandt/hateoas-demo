@@ -1,0 +1,10 @@
+<section data-ng-controller="CoreCtrl as vm" data-ng-init="vm.init()">
+	<ul>
+		<li data-ng-if="vm.hasLink('movies')">
+			<a data-ui-sref="movieList">Movies</a>
+		</li>
+		<li data-ng-if="vm.hasAction('create')">
+			<a data-ui-sref="movieAdd">Add Movie</a>
+		</li>
+	</ul>
+</section>
