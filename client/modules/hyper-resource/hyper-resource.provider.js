@@ -186,17 +186,14 @@
 			};
 
 			// NEEDS TESTING
-			Resource.prototype.Action = function(name, data, cfg, params){
+			Resource.prototype.Action = function(name, data, params, cfg){
 				var self = this;
-				return self.Get().then(
+				return self.Get(params).then(
 					function(result){
 						var action = result.actions.find(function(item){
 							return item.name === name;
 						});
 						if(action){
-							if(params){
-								action.href = replaceUrlParams(action.href, params);						
-							}
 							return self.Run(action, data, cfg).then(function(result){
 								// invalidate cached item
 								delete $window.sessionStorage[action.href];

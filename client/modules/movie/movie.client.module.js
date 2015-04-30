@@ -14,6 +14,10 @@
 			.state('movieAdd', {
 				url: '/movie/add',
 				templateUrl: '/modules/movie/movie.create.client.view.html'
+			})
+			.state('movieEdit', {
+				url: '/movie/edit/:movieId',
+				templateUrl: '/modules/movie/movie.edit.client.view.html'
 			});
 	};
 

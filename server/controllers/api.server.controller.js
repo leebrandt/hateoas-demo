@@ -54,5 +54,17 @@ exports.addMovie = function(req,res){
 		}
 		return res.json(movieDecorator.decorateMovie(movie));
 	});
+};
+
+exports.updateMovie = function(req,res){
+	var movie = Movie.findById(req.params.id).exec(function(err, movie){
+		_.extend(movie, req.body);
+		movie.save(function(err){
+			if(err){
+				return res.status(500).send({message:err});
+			}
+			return res.json(movieDecorator.decorateMovie(movie));
+		});
+	});
 	
 };

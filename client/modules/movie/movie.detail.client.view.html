@@ -1,9 +1,16 @@
 <section data-ng-controller="MovieCtrl as vm" data-ng-init="vm.loadMovie()">
-	<h2 data-ng-bind="vm.movie.properties.title"></h2>
-	<article data-ng-bind="vm.movie.properties.description"></article>
+	<div data-ng-bind="vm.movie._id"></div>
+	<h2 data-ng-bind="vm.movie.title"></h2>
+	<article data-ng-bind="vm.movie.description"></article>
+	<section>
+		<span data-ng-bind="'('+vm.movie.releaseYear+')'"></span>
+		<span data-ng-bind="vm.movie.director"></span>
+	</section>
+	<hr/>
+	<ul>
+		<li><a data-ui-sref="movieList">Back To List</a></li>
+		<li><a data-ui-sref="movieAdd">Add New</a></li>
+		<li><a data-ui-sref="movieEdit({movieId:vm.movie._id})">Edit</a></li>
+		<li><a data-ui-sref="home">Home</a></li>
+	</ul>
 </section>
-<ul>
-	<li><a data-ui-sref="movieList">Back To List</a></li>
-	<li><a data-ui-sref="movieAdd">Add New</a></li>
-	<li><a data-ui-sref="home">Home</a></li>
-</ul>

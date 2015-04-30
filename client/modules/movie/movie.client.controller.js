@@ -15,17 +15,25 @@
 		ctrl.loadMovie = function(){
 			var id = $stateParams.movieId;
 			if(id){
-				Movies.Get({_id:id}).then(function(movie){
-					console.log(movie);
-					ctrl.movie = movie;
-				});
+				Movies.Get({_id:id})
+					.then(function(movie){
+						ctrl.movie = movie.properties;
+					});
 			}
 		};
 
 		ctrl.addMovie = function(){
-			Movies.Action('create', ctrl.movie).then(function(movie){
-				$state.go('movieList');
-			});
+			Movies.Action('create', ctrl.movie)
+				.then(function(movie){
+					$state.go('movieList');
+				});
+		};
+
+		ctrl.updateMovie = function(){
+			Movies.Action('update', ctrl.movie, {_id:ctrl.movie._id})
+				.then(function(movie){
+					$state.go('movieList');
+				});
 		};
 
 		return ctrl;
